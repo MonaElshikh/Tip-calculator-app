@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Tip calculator app" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
+    <title>Tip Calculator App | Mona Elshikh</title>
+  </head>
+  <body>
+    <div class="calc-app" role="main">
+      <div class="logo"><img src="images/logo.svg" alt="logo" /></div>
+      <div class="calc-content">
+        <div class="input-data">
+          <label for="bill">Bill</label>
+          <input
+            type="number"
+            name="bill"
+            class="bill"
+            min="0"
+            placeholder="0"
+          />
+          <label>Select Tip %</label>
+          <div class="tip-options">
+            <button>5%</button>
+            <button>10%</button>
+            <button>15%</button>
+            <button>25%</button>
+            <button>50%</button>
+            <input type="text" placeholder="Custom" />
+          </div>
+          <label for="people">Number of people</label>
+          <input
+            type="number"
+            name="people"
+            class="people"
+            min="0"
+            placeholder="0"
+          />
+        </div>
+        <div class="result-data">
+          <div class="tip-amount">
+            <div class="title">
+              <span>Tip Amount</span><span>/ Person</span>
+            </div>
+            <p>$4.27</p>
+          </div>
+          <div class="total-amount">
+            <div class="title">
+              <span>Total</span><span> / Person</span></div>
+            <p>$32.27</p>
+          </div>
+          <button class="reset">Reset</button>
+        </div>
+      </div>
+    </div>
+    <script src="js/main.js" async="true"></script>
+  </body>
+</html>

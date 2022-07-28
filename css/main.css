@@ -1,0 +1,132 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+:root {
+  --main-bg-color:#c5e4e7;
+  --input-bg:#f3f8fb;
+  --text-color: hsl(186, 14%, 43%);
+  --strong-cyan:hsl(172, 67%, 45%);
+  --Very-dark-cyan: hsl(183, 100%, 15%);
+  --btn-bg-color:#0d686d;
+  /* --Grayish-cyan: hsl(184, 14%, 56%);
+  --Light-grayish-cyan: hsl(185, 41%, 84%);
+  --Very-light-grayish-cyan: hsl(189, 41%, 97%); */
+  --White: hsl(0, 0%, 100%);
+  --radius:15px
+}
+body {
+    font-family: 'Space Mono', monospace;
+    padding: 0;
+    margin: 0;
+    color: var(--text-color);
+    font-size: 24px;
+}
+input {
+    display: block;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 100%;
+    background-color: var(--input-bg);
+    color: var(--Very-dark-cyan);
+    text-align: right;
+    position: relative;
+}
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+::placeholder {
+    /* font-size: 14px; */
+}
+.calc-app {
+    background-color: var(--main-bg-color);
+}
+.logo {
+    text-align:center;
+    padding: 60px 40px;
+}
+.calc-content {
+    background-color: var(--White);
+    border-top-right-radius: var(--radius);
+    border-top-left-radius: var(--radius);
+    padding:35px 25px;
+   height: 100%;
+}
+.bill {
+    background:url("../images/icon-dollar.svg") no-repeat left;
+}
+.people {
+    background:url("../images/icon-person.svg") no-repeat left;
+}
+.bill ,
+.people {
+    padding-left: 25px;
+    background-size: 14px;
+    background-color: var(--input-bg);
+    background-position: 10px;
+}
+.tip-options {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(3,45px);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+.tip-options > button {
+    background-color: var(--Very-dark-cyan);
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    color: var(--White);
+}
+.tip-options > button:hover {
+    background-color: var(--strong-cyan);
+    color: var(--Very-dark-cyan);
+}
+.tip-options > input {
+    margin-bottom: 0;
+}
+.result-data {
+    margin: 25px 0;
+    padding: 25px 20px;
+    background-color: var(--Very-dark-cyan);
+    border-radius: var(--radius);
+}
+.result-data .title span {
+    font-size: 14px;
+    display: block;
+}
+.result-data .title span:first-child {
+    color: var(--White);
+}
+.tip-amount ,
+.total-amount {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.tip-amount > p ,
+.total-amount >p  {
+    color: var(--strong-cyan);
+    margin: 0;
+    font-size: 28px;
+}
+.result-data > button {     
+    display: block;
+    background-color: var(--btn-bg-color);
+    color: var(--Very-dark-cyan);
+    padding: 10px 15px;
+    width: 100%;
+    border:none;
+    border-radius: 5px;
+}
+.result-data > button.active {
+    background-color: var(--strong-cyan);
+    color: var(--Very-dark-cyan);
+}
