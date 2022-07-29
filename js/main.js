@@ -8,7 +8,6 @@ const tipOptionsBtns = Array.from(document.querySelectorAll(".tip-options button
 const resetBtn = document.querySelector(".reset");
 const tip = document.querySelector(".tip-amount > p");
 const total = document.querySelector(".total-amount > p");
-
 let selectedTipOption = 0;
 //#endregion
 
@@ -26,6 +25,10 @@ function showHideErrorMesgs(txt, lbl, action) {
             break;
     }
 }
+// function to reset active style from tip options buttons
+function resetActiceStyle(control) {
+    control.forEach((item) => item.classList.remove("active"));
+}
 // function to valiate fields
 function validate(control, lbl) {
     if (control.value) {
@@ -37,23 +40,18 @@ function validate(control, lbl) {
         return false;
     }
 }
-function resetActiceStyle(control) {
-    control.forEach((item) => item.classList.remove("active"));
-}
 // function to add click event to tip options buttons
 function tipButtonsClick() {
     tipOptionsBtns.forEach((btn) => {
         btn.addEventListener("click", () => {
             // reset active style from buttons
             resetActiceStyle(tipOptionsBtns);
-            // btn.parentElement.querySelectorAll("button").forEach((item) => item.classList.remove("active"));
             // add active to current button
             btn.classList.toggle("active");
             // get the selected tip button value
             let selectedBtn = tipOptionsBtns.filter(btn => btn.classList.contains("active"))[0];
             selectedTipOption = selectedBtn.innerHTML.substring(0, selectedBtn.innerHTML.length - 1);
-            // console.log(selectedTipOption);
-            // clear custom value if exsist
+            // clear custom value if exsists
             custom.value = "";
         });
     });
@@ -83,7 +81,7 @@ function calculate() {
     let billValue = parseInt(bill.value);
     let noOfPersonsValue = parseInt(people.value);
     let tipValue = parseInt(selectedTipOption);
-    
+
     // get bill per person
     billPerPerson = (billValue / noOfPersonsValue).toFixed(2);
     // get tip per person
@@ -101,7 +99,7 @@ function calculate() {
 // function to show reset result
 function resetResult() {
     resetBtn.addEventListener("click", () => {
-        // first validate fileds
+        // if fields validation true
         if (validate(bill, billErrorMesg) && validate(people, peopleErrorMesg)) {
             calculate();
         } else {
