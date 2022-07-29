@@ -8,6 +8,7 @@
   --input-bg:#f3f8fb;
   --text-color: hsl(186, 14%, 43%);
   --strong-cyan:hsl(172, 67%, 45%);
+  --btn-hover-color:#9fe8df;
   --Very-dark-cyan: hsl(183, 100%, 15%);
   --btn-bg-color:#0d686d;
   /* --Grayish-cyan: hsl(184, 14%, 56%);
@@ -26,7 +27,7 @@ body {
 input {
     display: block;
     outline: none;
-    border: none;
+    border: solid 2px transparent;
     border-radius: 5px;
     margin-bottom: 20px;
     padding: 10px;
@@ -36,13 +37,26 @@ input {
     text-align: right;
     position: relative;
 }
+button:hover {
+    background-color: var(--btn-hover-color);
+}
+input:hover {
+    border: solid 2px var(--strong-cyan);
+}
+input.error {
+    border: solid 2px rgb(206, 47, 47);
+}
 label {
     display: block;
     margin-bottom: 10px;
     font-size: 18px;
 }
-::placeholder {
-    /* font-size: 14px; */
+.error-mesg {
+    color: rgb(206, 47, 47);
+    display: none;
+}
+.error-mesg.show {
+    display: inline;
 }
 .calc-app {
     background-color: var(--main-bg-color);
@@ -57,6 +71,14 @@ label {
     border-top-left-radius: var(--radius);
     padding:35px 25px;
    height: 100%;
+}
+.custom.disabled {
+    pointer-events: none;
+}
+.bill-title , 
+.people-title {
+    display: flex;
+    justify-content: space-between;
 }
 .bill {
     background:url("../images/icon-dollar.svg") no-repeat left;
@@ -80,14 +102,18 @@ label {
 }
 .tip-options > button {
     background-color: var(--Very-dark-cyan);
+    color: var(--White);
     border: none;
     outline: none;
     border-radius: 5px;
-    color: var(--White);
     cursor: pointer;
 }
-.tip-options > button:hover {
+.tip-options > button.active {
     background-color: var(--strong-cyan);
+    color: var(--Very-dark-cyan);
+}
+.tip-options > button:hover {
+    background-color: var(--btn-hover-color);
     color: var(--Very-dark-cyan);
 }
 .tip-options > input {
@@ -126,9 +152,12 @@ label {
     width: 100%;
     border:none;
     border-radius: 5px;
+    cursor: pointer;
+}
+.result-data > button:hover { 
+    background-color: var(--btn-hover-color);
 }
 .result-data > button.active {
     background-color: var(--strong-cyan);
     color: var(--Very-dark-cyan);
-    cursor: pointer;
 }

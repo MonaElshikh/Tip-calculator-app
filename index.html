@@ -30,17 +30,13 @@
   <body>
     <div class="calc-app" role="main">
       <div class="logo"><img src="images/logo.svg" alt="logo" /></div>
-      <form class="calc-content">
+      <div class="calc-content">
         <div class="input-data">
-          <label for="bill">Bill</label>
-          <input
-            type="number"
-            name="bill"
-            class="bill"
-            min="0"
-            placeholder="0"
-            required
-          />
+          <div class="bill-title">
+            <label for="bill">Bill</label>
+            <label class="error-mesg">Can't be zero</label>
+          </div>
+          <input type="number" name="bill" class="bill" placeholder="0" />
           <label>Select Tip %</label>
           <div class="tip-options">
             <button>5%</button>
@@ -48,32 +44,28 @@
             <button>15%</button>
             <button>25%</button>
             <button>50%</button>
-            <input type="text" placeholder="Custom" />
+            <input type="number" placeholder="Custom" class="custom" />
           </div>
-          <label for="people">Number of people</label>
-          <input
-            type="number"
-            name="people"
-            class="people"
-            min="0"
-            placeholder="0"
-            required
-          />
+          <div class="people-title">
+            <label for="people">Number of people</label>
+            <label class="error-mesg">Can't be zero</label>
+          </div>
+          <input type="number" name="people" class="people" placeholder="0" />
         </div>
         <div class="result-data">
           <div class="tip-amount">
             <div class="title">
               <span>Tip Amount</span><span>/ Person</span>
             </div>
-            <p>$4.27</p>
+            <p>$0.00</p>
           </div>
           <div class="total-amount">
             <div class="title"><span>Total</span><span> / Person</span></div>
-            <p>$32.27</p>
+            <p>$0.00</p>
           </div>
           <button class="reset" type="submit">Reset</button>
         </div>
-      </form>
+      </div>
     </div>
     <script src="js/main.js" async="true"></script>
   </body>
