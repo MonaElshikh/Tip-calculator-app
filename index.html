@@ -10,6 +10,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      rel="preload"
+      as="style"
+      href="css/media.css"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <link
       href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap"
       rel="stylesheet"
     />
@@ -24,7 +30,7 @@
   <body>
     <div class="calc-app" role="main">
       <div class="logo"><img src="images/logo.svg" alt="logo" /></div>
-      <div class="calc-content">
+      <form class="calc-content">
         <div class="input-data">
           <label for="bill">Bill</label>
           <input
@@ -33,6 +39,7 @@
             class="bill"
             min="0"
             placeholder="0"
+            required
           />
           <label>Select Tip %</label>
           <div class="tip-options">
@@ -50,6 +57,7 @@
             class="people"
             min="0"
             placeholder="0"
+            required
           />
         </div>
         <div class="result-data">
@@ -60,13 +68,12 @@
             <p>$4.27</p>
           </div>
           <div class="total-amount">
-            <div class="title">
-              <span>Total</span><span> / Person</span></div>
+            <div class="title"><span>Total</span><span> / Person</span></div>
             <p>$32.27</p>
           </div>
-          <button class="reset">Reset</button>
+          <button class="reset" type="submit">Reset</button>
         </div>
-      </div>
+      </form>
     </div>
     <script src="js/main.js" async="true"></script>
   </body>

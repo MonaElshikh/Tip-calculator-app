@@ -84,6 +84,7 @@ label {
     outline: none;
     border-radius: 5px;
     color: var(--White);
+    cursor: pointer;
 }
 .tip-options > button:hover {
     background-color: var(--strong-cyan);
@@ -129,4 +130,5 @@ label {
 .result-data > button.active {
     background-color: var(--strong-cyan);
     color: var(--Very-dark-cyan);
+    cursor: pointer;
 }

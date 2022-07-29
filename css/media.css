@@ -1,0 +1,34 @@
+@media (min-width:1440px) {
+ .calc-app {
+    background-color: var(--main-bg-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+ }
+ .calc-content {
+    display: flex;
+    justify-content: space-around;
+    border-radius: var(--radius);
+ }
+ .input-data {
+    width: 45%;
+ }
+ .result-data {
+    position: relative;
+    width: 45%;
+    margin: 0;
+    padding: 45px;
+ }
+ .result-data >button {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    width: 80%;
+    transform: translateX(-50%);
+ }
+ .tip-amount, .total-amount {
+    margin-bottom: 50px;
+ }
+}
